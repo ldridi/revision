@@ -1,0 +1,31 @@
+{% extends 'layout/layout.html.twig'%}
+{% block body %}
+    <div class="main">
+        <div class="wrap">
+            <!---728x90--->
+
+            <div class="content_top">
+                <div class="events">
+                    <h2>{{ events|length }} Upcoming Events</h2>
+                    <div class="section group">
+                        {% for event in events %}
+                        <div class="grid_1_of_4 events_1_of_3">
+                            <div class="event-time">
+                                <h4><span>{{ event.nameEvent }}</span></h4>
+                                <h4><span>{{ event.priceEvent|localizedcurrency('EUR') }}</span></h4>
+
+                                <h4>Sep 20Th, 2013</h4>
+                            </div>
+                            <div class="event-img">
+                                <a href="blog.html"><img src="{{ asset('template/images/event-img1.jpg') }}" alt=""><span>Read More</span></a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!---728x90--->
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
